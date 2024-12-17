@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Digital Connections </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+  .comment-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  /* Styling for the comment box */
+  .comment-box {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  /* Styling for the post button */
+  .post-button {
+    padding: 10px 20px;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  /* Button hover effect */
+  .post-button:hover {
+    background-color: aliceblue;
+  }
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  }
+
+  /* Style for the modal content */
+  .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      text-align: center;
+  }
+
+  /* Style for the close button */
+  .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  /* Style for the subscribe button */
+  .subscribe-button {
+      padding: 10px 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+  }
+
+  .subscribe-button:hover {
+      background-color:skyblue;
+  }
+</style>
+</head>
+
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-snapchat"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-flickr"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+  <a href="https://docs.google.com/document/d/1xlRPk35VmQfk3Nc77qJEG_HusuZn7cfk/edit" class="w3-bar-item w3-button w3-right">Ethnography</a>
+   <a href="https://docs.google.com/document/d/1-CQW8IS6ra0l5l93SYiFk6cSH_x-IUn7YoKdpVwSO_Q/edit?tab=t.0" class="w3-bar-item w3-button w3-right">Reflection</a>
+
+
+</div>
+  <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Click here to get updated when the next blog is posted</p>
+          <button id="subscribeButton" class="subscribe-button">Subscribe</button>
+      </div>
+  </div>
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><b>Digital Connections</b></h1>
+    <h6> Rediscovering my Persian Identity  <span class="w3-tag"></span></h6>
+
+  </header>
+
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image" src="connec.jpg" alt="Fashion Blog" width="1600" height="1060">
+    <div class="w3-display-left w3-padding-large">
+      <h1 class="w3-text-white">Zainab Majidi </h1>
+      <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">SUBSCRIBE</button></h6>
+    </div>
+  </header>
+
+  </div>
+  <!-- Grid -->
+  <div class="w3-row w3-padding w3-border">
+
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3> Day 1 of the Persian Groupchat</h3>
+          <h5> Come explore a Persian Groupchat with me filled with strangers from all over the World <span class="w3-opacity"> November 07,2024</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="insta1.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <p><strong>The first day!</strong> Hey guys! I need your suggestions. I joined a Persian groupchat with people from all over the world. It is somewhat welcoming but these people never stop texting. There is about 150 people in the groupchat and it seems to always be active.Seemed a little risky at first to join a large groupchat like this but I do think it might be a good way to keep myself connected to my persian roots by interacting with other people of the same culture. So far, it definitely feels overwhelming to see so many notifications from instagram at once. </p>
+          <p> I have't made much of an attempt to join in on the conversations but I'm wondering what are our thoughts on Groupchats like these? Is it possible to find friends and should people even speak in them for their own safety? </p>
+          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">2</span></button></p>
+          <p class="w3-clear"></p>
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>
+              <div class="w3-col l2 m3">
+                <img src="insta3.webp" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4> Saba <span class="w3-opacity w3-medium">Nov 18, 2024, 5:32 PM</span></h4>
+                <p>Hey, I'm also in the groupchat and I had just been stalking your page.Just wanted to say I love the content you post. Initially, I was also nervous to talk in a groupchat with so many people. However, I just told myself YOLO and from there, things became easier. I even joined the calling groupchat and we hop on calls occasionally to just talk about our lives and although, we are so far away from each other, we surprisingly have had a lot in common.   </p>
+              </div>'
+            <div class="w3-col l10 m9">
+              <h4> Zainab<span class="w3-opacity w3-medium">Nov. 18, 2024, 10:30 PM</span></h4>
+              <p> Hi!!! Glad you enjoy the content. Where are you from?   </p>
+              <div class="comment-container">
+                <!-- Comment Box with placeholder text -->
+                <input type="text" class="comment-box" placeholder="Write a comment/share your thoughts with the rest of the world">
+
+                <!-- Post Button -->
+                <button class="post-button">Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3> 1 Week of the Persian Groupchat</h3>
+          <h5> Getting to know Eachother  <span class="w3-opacity">Nov 18,2024</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="iran.avif" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+          <p><strong>-Week 1</strong> Making friends with strangers</p>
+          <p>A week has gone by now and somehow the group has still managed to be active. The girl who made the groupchat constantly wants to call which has also made me wonder how people are so open to interacting with strangers like that. Nonetheless, I decided to stay away from the calls. I did see that although there was over 200 people at one point, only 20 actually spoke in the groupchat. I eventually felt comfortable and started opening up. I even met someone from New York in the groupchat and we happened to go to the same Persian school as kids which caught us both off gaurd.It amazed how everyone was in different corners of the world yet we still had so much in common surprisingly.  </p>
+          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Replies  </b> <span class="w3-tag w3-white">2</span></button></p>
+          <p class="w3-clear"></p>
+
+          <!-- Example of comment field -->
+          <div id="demo2" style="display:none">
+            <div class="w3-row">
+              <hr>
+              <div class="w3-col l2 m3">
+                <img src="insta3.webp" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Parham_59 <span class="w3-opacity w3-medium">Nov 28, 2024, 10:52 PM</span></h4>
+                <p> Welcome to the groupchat. I just followed you. </p><br>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="insta3.webp" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Anahita <span class="w3-opacity w3-medium">April 28, 2024, 9:12 PM</span></h4>
+                <p>The groupchat is so fun fr. You should join the calls sometime</p>  
+              </div>
+            </div>
+          </div>
+          <div class="comment-container">
+            <textarea class="comment-box" id="comment-box" placeholder="Write a comment/share your thoughts "></textarea>
+            <button class="post-button" onclick="postComment()">Post</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>Weeks later </h3>
+          <h5> Where are we with the Groupchat now? <span class="w3-opacity"> </span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="kk.webp" alt="Runway" style="width:100%" class="w3-padding-16">
+          <p><strong> New Groupchat? </strong> Creating a Groupchat of my own.</p>
+          <p> Though it was fun being in that groupchat, I had decided my departure time has come. I had never realized how much drama could come from a groupchat consisting of people miles apart from each other. I have made one good friend, Saba, from the groupchat and we collectively decided to create our own small groupchat. We started off with some people from the old groupchat but eventually decided that we wanted to start fresh so we had some of our friends add people they knew as well. I think that we have been successful so far at keeping the groupchat. Let me know your thoughts on creating groupchats below. We named the Groupchat after everyone's least favorite Persian stew, Khoresht karafs which is composed of celery and beef. So far, there has been drama here and there but it seems like everyone enjoys speaking in it and they have all developed a good friendship with each other despite half the groupchat being in America and the other half in Europe and Australia. These aspects are what make the groupchat more interesting as we get to compare how our lives maybe different or similar. Since the timezones are different, the groupchat is never quiet, there is usually someone speaking.  </p>
+          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')"><b>Replies  </b> <span class="w3-tag w3-white">3</span></button></p>
+          <p class="w3-clear"></p>
+
+          <!-- Example of comment field -->
+          <div id="demo3" style="display:none">
+            <hr>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="insta3.webp" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4> Reyhaneh <span class="w3-opacity w3-medium">Dec 05, 2024, 7:22 PM</span></h4>
+                <p>I just got added into the groupchat and I really feel like everyone in there is like family to each other. </p>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="insta3.webp" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Arshia <span class="w3-opacity w3-medium">Dec 07, 2024, 9:12 PM</span></h4>
+                <p> I have known Zainab for awhile now and she is really chill. I'm hoping the whole groupchat can meet up in real life as we have all grown so connected.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="comment-container">
+            <!-- Comment Box with placeholder text -->
+            <input type="text" class="comment-box" placeholder="Write a comment/share your thoughts with the rest of the world">
+
+            <!-- Post Button -->
+            <button class="post-button">Post</button>
+          </div>
+        </div>
+      </div>
+
+    <!-- END BLOG ENTRIES -->
+    </div>
+
+    <!-- About/Information menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-white w3-margin">
+        <img src="insta.webp" alt="Jane" style="width:100%" class="w3-grayscale">
+        <div class="w3-container w3-black">
+          <h4>Zainab Majidi </h4>
+          <p>A place to express my thoughts but open to feedback always.If you are interested in making new friends, be sure to leave comments on my blogs!</p>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Posts -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Popular Posts</h4>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+          <li class="w3-padding-16">
+            <img src="dar.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Iran 2024</span>
+            <br>
+            <span>Trip to Iran</span>
+          </li>
+          <li class="w3-padding-16">
+            <img src="art.webp" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Persian content 1</span>
+            <br>
+            <span> learning how to read Persian </span>
+          </li>
+          <li class="w3-padding-16">
+            <img src="identity.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Searching for my identity in the west </span>
+            <br>
+            <span> Part 1 </span>
+          </li>
+          <li class="w3-padding-16">
+            <img src="tahchin.jpg" alt="Image" class="w3-left w3-margin-right w3-sepia" style="width:50px">
+            <span class="w3-large">Searching for my identity in the west</span>
+            <br>
+            <span>Part 2: learning how to cook ethnic dishes </span>
+          </li>
+        </ul>
+      </div>
+      <hr>
+
+      <!-- Advertising -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+            <h4> Take a ski trip in Iran this winter with your fav influencers </h4>
+        </div>
+        <div class="w3-container w3-white">
+            <div class="w3-container w3-display-container w3-light-grey w3-section" style="height:200px">
+                <!-- Replace text with image -->
+                <img src="iranski.jpg" alt="Advertisement" style="max-width:100%; max-height:100%; object-fit:contain;">
+            </div>
+        </div>
+      </div>
+      <hr>
+      <!-- Tags -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Tags</h4>
+        </div>
+        <div class="w3-container w3-white">
+          <p>
+            <span class="w3-tag w3-black w3-margin-bottom">Persian</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Persianrugs</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Persianfood</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">MiddleEast</span>
+            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">diaspora</span>
+            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> 
+        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Trends</span>
+          </p>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Inspiration -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>People you may know</h4>
+        </div>
+        <div class="w3-row-padding w3-white">
+          <div class="w3-col s6">
+            <p><img src="nasi.jpg" alt="Jeans" style="width:100%"></p>
+            <p></p>
+          </div>
+          <div class="w3-col s6">
+            <p><img src="mah.jpg" alt="Men in Hats" style="width:100%" class="w3-grayscale"></p>
+
+         </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Follow Me</h4>
+        </div>
+        <div class="w3-container w3-xlarge w3-padding">
+          <i class="fa fa-facebook-official w3-hover-opacity"></i>
+          <i class="fa fa-instagram w3-hover-opacity"></i>
+          <i class="fa fa-snapchat w3-hover-opacity"></i>
+          <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+          <i class="fa fa-twitter w3-hover-opacity"></i>
+          <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Subscribe -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Subscribe</h4>
+        </div>
+        <div class="w3-container w3-white">
+          <p>To be notified for the next blog, Enter the following information below: </p>
+          <div class="w3-section">
+           <p><input class="w3-input w3-border" type="text" placeholder="Name" style="width:100%"></p>
+             <p><input class="w3-input w3-border" type="text" placeholder="Phone num" style="width:100%"></p>
+             <p><input class="w3-input w3-border" type="text" placeholder="Type a message/suggestion" style="width:100%"></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="E-mail" style="width:100%"></p>
+          <p><button type="button" onclick="document.getElementById('subscribe').style.display='block'" class="w3-button w3-block w3-blue">Subscribe</button></p>
+        </div>
+      </div>
+
+    <!-- END About/Intro Menu -->
+    </div>
+
+  <!-- END GRID -->
+  </div>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Subscribe Modal -->
+<div id="subscribe" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-white">
+      <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h2 class="w3-wide">SUBSCRIBE</h2>
+      <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey" style="padding:32px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+<script>
+  var modal = document.getElementById("myModal");
+
+  // Display the modal when the page loads
+  window.onload = function() {
+      modal.style.display = "block"; // Show the modal
+      // Hide the modal after 5 seconds
+      setTimeout(function() {
+          modal.style.display = "none"; // Hide the modal after 5 seconds
+      }, 5000);
+  }
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the close button, close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks the Subscribe button
+  document.getElementById("subscribeButton").onclick = function() {
+      alert("Thank you for subscribing to Zainab's Blog!");
+      modal.style.display = "none"; // Close the modal after subscribing
+  }
+
+  // When the user clicks anywhere outside the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Liked";
+}
+</script>
+
+</body>
+</html>
